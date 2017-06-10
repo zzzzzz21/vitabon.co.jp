@@ -1,0 +1,25 @@
+include mixin
+include var
+
+block define
+
+doctype html
+html(lang='ja')
+  head(prefix='og:http://ogp.me/ns#')
+    block head
+      include head
+
+  body
+    block body
+
+      block header
+        include header
+
+      block main
+
+      block footer
+        include footer
+
+    block script
+      script(src=root+PATH.js+"/vendor.js")
+      script(src=root+PATH.js+"/main.js")

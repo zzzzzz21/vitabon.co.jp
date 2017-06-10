@@ -1,0 +1,540 @@
+//メディアクエリー
+// BS3.x準拠
+xs(obj)
+  @media (max-width: 767px)
+    for key, val in obj
+      {key} val
+
+sm(obj)
+  @media (min-width: 768px) and (max-width: 991px)
+    for key, val in obj
+      {key} val
+
+md(obj)
+  @media (min-width: 992px) and (max-width: 1199px)
+    for key, val in obj
+      {key} val
+
+lg(obj)
+  @media (min-width: 1200px)
+    for key, val in obj
+      {key} val
+
+xs-sm(obj)
+  @media (max-width: 991px)
+    for key, val in obj
+      {key} val
+
+xs-md(obj)
+  @media (max-width: 1199px)
+    for key, val in obj
+      {key} val
+
+sm-md(obj)
+  @media (min-width: 768px) and (max-width: 1199px)
+    for key, val in obj
+      {key} val
+
+sm-lg(obj)
+  @media (min-width: 768px)
+    for key, val in obj
+      {key} val
+
+md-lg(obj)
+  @media (min-width: 992px)
+    for key, val in obj
+      {key} val
+
+vw(prop, val, base = 375)
+  {prop} val px
+  {prop} floor((val/base) * 100) vw
+
+
+// 袋文字
+stroked(width, color)
+  x = 0
+  y = 0
+  bufX = 0
+  bufY = 0
+  buf = ''
+  for i in (0...36)
+    x = floor(width * sin(i * 10deg))
+    y = floor(width * cos(i * 10deg))
+    unless (x == bufX) && (y == bufY)
+      buf += ', ' unless i == 0
+      buf += join(' ', x y '1px' color)
+    bufX = x
+    bufY = y
+  text-shadow unquote(buf)
+
+ellips()
+  overflow hidden
+  text-overflow ellipsis
+  white-space nowrap
+
+justify()
+  text-align justify
+  text-justify inter-ideograph
+
+triangle(color, forward = u, base, d)
+  width 0
+  height 0
+  border-style solid
+  w = round(base / 2)
+  h = round(w / tan((d / 2)deg))
+  if forward == d
+    border-width (h)px (w)px 0
+    border-color color transparent transparent
+  else if forward == r
+    border-width (w)px 0 (w)px (h)px
+    border-color transparent transparent transparent color
+  else if forward == l
+    border-width (w)px (h)px (w)px 0
+    border-color transparent color transparent transparent
+  else
+    border-width 0 (w)px (h)px (w)px
+    border-color transparent transparent color
+
+cf()
+  &:after
+    content " "
+    display block
+    clear both
+
+trbl0()
+  top 0
+  right 0
+  bottom 0
+  left 0
+
+text-hidden()
+  text-indent 100%
+  white-space nowrap
+  overflow hidden
+
+bg(x = 0, y = 0)
+  background-color transparent
+  background-repeat no-repeat
+  background-position x y
+
+font-goth()
+  font-family -apple-system, BlinkMacSystemFont, 'Hiragino Kaku Gothic ProN', '游ゴシック  Medium', meiryo, sans-serif
+
+font-min()
+  font-family "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif
+
+font-size(size)
+  if size is 'inherit'
+    font-size inherit
+  else
+    if unit(size) is '' || unit(size) is 'px'
+      font-size size rem
+    else
+      font-size size
+
+fz(size)
+  font-size size
+fz-xs(size)
+  xs({font-size: size})
+fz-sm(size)
+  sm({font-size: size})
+fz-md(size)
+  md({font-size: size})
+fz-lg(size)
+  lg({font-size: size})
+
+lh(height)
+  line-height height
+lh-xs(height)
+  xs({line-height: height})
+lh-sm(height)
+  sm({line-height: height})
+lh-md(height)
+  md({line-height: height})
+lh-lg(height)
+  lg({line-height: height})
+
+ls(space)
+  letter-spacing space
+ls-xs(space)
+  xs({letter-spacing: space})
+ls-sm(space)
+  sm({letter-spacing: space})
+ls-md(space)
+  md({letter-spacing: space})
+ls-lg(space)
+  lg({letter-spacing: space})
+
+bgi(url)
+  background-image url(url)
+bgi-xs(url)
+  xs({background-image: url(url)})
+bgi-sm(url)
+  sm({background-image: url(url)})
+bgi-md(url)
+  md({background-image: url(url)})
+bgi-lg(url)
+  lg({background-image: url(url)})
+
+bgsz(size)
+  background-size size
+bgsz-xs(size)
+  xs({background-size: size})
+bgsz-sm(size)
+  sm({background-size: size})
+bgsz-md(size)
+  md({background-size: size})
+bgsz-lg(size)
+  lg({background-size: size})
+
+mt(val)
+  margin-top val
+mt-xs(val)
+  xs({margin-top: val})
+mt-sm(val)
+  sm({margin-top: val})
+mt-md(val)
+  md({margin-top: val})
+mt-lg(val)
+  lg({margin-top: val})
+
+mr(val)
+  margin-right val
+mr-xs(val)
+  xs({margin-right: val})
+mr-sm(val)
+  sm({margin-right: val})
+mr-md(val)
+  md({margin-right: val})
+mr-lg(val)
+  lg({margin-right: val})
+
+mb(val)
+  margin-bottom val
+mb-xs(val)
+  xs({margin-bottom: val})
+mb-sm(val)
+  sm({margin-bottom: val})
+mb-md(val)
+  md({margin-bottom: val})
+mb-lg(val)
+  lg({margin-bottom: val})
+
+ml(val)
+  margin-left val
+ml-xs(val)
+  xs({margin-left: val})
+ml-sm(val)
+  sm({margin-left: val})
+ml-md(val)
+  md({margin-left: val})
+ml-lg(val)
+  lg({margin-left: val})
+
+m(val)
+  margin val
+m-xs(val)
+  xs({margin: val})
+m-sm(val)
+  sm({margin: val})
+m-md(val)
+  md({margin: val})
+m-lg(val)
+  lg({margin: val})
+
+pt(val)
+  padding-top val
+pt-xs(val)
+  xs({padding-top: val})
+pt-sm(val)
+  sm({padding-top: val})
+pt-md(val)
+  md({padding-top: val})
+pt-lg(val)
+  lg({padding-top: val})
+
+pr(val)
+  padding-right val
+pr-xs(val)
+  xs({padding-right: val})
+pr-sm(val)
+  sm({padding-right: val})
+pr-md(val)
+  md({padding-right: val})
+pr-lg(val)
+  lg({padding-right: val})
+
+pb(val)
+  padding-bottom val
+pb-xs(val)
+  xs({padding-bottom: val})
+pb-sm(val)
+  sm({padding-bottom: val})
+pb-md(val)
+  md({padding-bottom: val})
+pb-lg(val)
+  lg({padding-bottom: val})
+
+pl(val)
+  padding-left val
+pl-xs(val)
+  xs({padding-left: val})
+pl-sm(val)
+  sm({padding-left: val})
+pl-md(val)
+  md({padding-left: val})
+pl-lg(val)
+  lg({padding-left: val})
+
+p(val)
+  padding val
+p-xs(val)
+  xs({padding: val})
+p-sm(val)
+  sm({padding: val})
+p-md(val)
+  md({padding: val})
+p-lg(val)
+  lg({padding: val})
+
+
+t-xs(val)
+  xs({top: val})
+t-sm(val)
+  sm({top: val})
+t-md(val)
+  md({top: val})
+t-lg(val)
+  lg({top: val})
+
+r-xs(val)
+  xs({right: val})
+r-sm(val)
+  sm({right: val})
+r-md(val)
+  md({right: val})
+r-lg(val)
+  lg({right: val})
+
+b-xs(val)
+  xs({bottom: val})
+b-sm(val)
+  sm({bottom: val})
+b-md(val)
+  md({bottom: val})
+b-lg(val)
+  lg({bottom: val})
+
+l-xs(val)
+  xs({left: val})
+l-sm(val)
+  sm({left: val})
+l-md(val)
+  md({left: val})
+l-lg(val)
+  lg({left: val})
+
+
+sz(w, h)
+  width w
+  height h
+sz-xs(w, h)
+  xs({width:w,height:h})
+sz-sm(w, h)
+  sm({width:w,height:h})
+sz-md(w, h)
+  md({width:w,height:h})
+sz-lg(w, h)
+  lg({width:w,height:h})
+
+w(w)
+  width w
+w-xs(w)
+  xs({width:w})
+w-sm(w)
+  sm({width:w})
+w-md(w)
+  md({width:w})
+w-lg(w)
+  lg({width:w})
+
+h(h)
+  height h
+h-xs(h)
+  xs({height:h})
+h-sm(h)
+  sm({height:h})
+h-md(h)
+  md({height:h})
+h-lg(h)
+  lg({height:h})
+
+tar()
+  text-align right
+tar-xs()
+  xs({'text-align': right})
+tar-sm()
+  sm({'text-align': right})
+tar-md()
+  md({'text-align': right})
+tar-lg()
+  lg({'text-align': right})
+
+tal()
+  text-align left
+tal-xs()
+  xs({'text-align': left})
+tal-sm()
+  sm({'text-align': left})
+tal-md()
+  md({'text-align': left})
+tal-lg()
+  lg({'text-align': left})
+
+tac()
+  text-align center
+tac-xs()
+  xs({'text-align': center})
+tac-sm()
+  sm({'text-align': center})
+tac-md()
+  md({'text-align': center})
+tac-lg()
+  lg({'text-align': center})
+
+flr()
+  float right
+flr-xs()
+  xs({float:right})
+flr-sm()
+  sm({float:right})
+flr-md()
+  md({float:right})
+flr-lg()
+  lg({float:right})
+
+fll()
+  float left
+fll-xs()
+  xs({float:left})
+fll-sm()
+  sm({float:left})
+fll-md()
+  md({float:left})
+fll-lg()
+  lg({float:left})
+
+fln()
+  float none
+fln-xs()
+  xs({float:none})
+fln-sm()
+  sm({float:none})
+fln-md()
+  md({float:none})
+fln-lg()
+  lg({float:none})
+
+clr()
+  clear right
+clr-xs()
+  xs({clear:right})
+clr-sm()
+  sm({clear:right})
+clr-md()
+  md({clear:right})
+clr-lg()
+  lg({clear:right})
+
+cll()
+  clear left
+cll-xs()
+  xs({clear:left})
+cll-sm()
+  sm({clear:left})
+cll-md()
+  md({clear:left})
+cll-lg()
+  lg({clear:left})
+
+clb()
+  clear both
+clb-xs()
+  xs({clear:both})
+clb-sm()
+  sm({clear:both})
+clb-md()
+  md({clear:both})
+clb-lg()
+  lg({clear:both})
+
+db()
+  display block
+db-xs()
+  xs({display:block})
+db-sm()
+  sm({display:block})
+db-md()
+  md({display:block})
+db-lg()
+  lg({display:block})
+
+di()
+  display inline
+di-xs()
+  xs({display:inline})
+di-sm()
+  sm({display:inline})
+di-md()
+  md({display:inline})
+di-lg()
+  lg({display:inline})
+
+dib()
+  display inline-block
+dib-xs()
+  xs({display:inline-block})
+dib-sm()
+  sm({display:inline-block})
+dib-md()
+  md({display:inline-block})
+dib-lg()
+  lg({display:inline-block})
+
+df()
+  display flex
+df-xs()
+  xs({display:flex})
+df-sm()
+  sm({display:flex})
+df-md()
+  md({display:flex})
+df-lg()
+  lg({display:flex})
+
+dn-xs()
+  xs({display:none})
+dn-sm()
+  sm({display:none})
+dn-md()
+  md({display:none})
+dn-lg()
+  lg({display:none})
+
+por-xs()
+  xs({position:relative})
+por-sm()
+  sm({position:relative})
+por-md()
+  md({position:relative})
+por-lg()
+  lg({position:relative})
+
+poa-xs()
+  xs({position:absolute})
+poa-sm()
+  sm({position:absolute})
+poa-md()
+  md({position:absolute})
+poa-lg()
+  lg({position:absolute})

@@ -1,0 +1,53 @@
+// ベース
+body
+html
+  text-rendering optimizeLegibility !important
+  -webkit-font-smoothing antialiased !important
+
+@css {
+  html {
+    cursor: default;
+    font-size: 6.25%;
+  }
+}
+
+body
+  color #fff
+  background-color $color-bg
+
+a
+  outline none
+  text-decoration none
+  transition opacity .3s
+  &:focus
+    outline 0
+  &:hover
+  &:focus
+    opacity .5
+    text-decoration none
+
+.hidden-lg
+  dn-lg()
+.hidden-md
+  dn-md()
+.hidden-sm
+  dn-sm()
+.hidden-xs
+  dn-xs()
+
+// 基本レイアウト
+.container
+.header-page
+.footer-page
+  margin-right auto
+  margin-left auto
+  w-xs auto
+  mr-xs 20px
+  ml-xs 20px
+
+.header-page
+.footer-page
+  width 1460px
+
+.container
+  width 1330px

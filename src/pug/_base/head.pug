@@ -1,0 +1,22 @@
+meta(charset='utf-8')
+meta(http-equiv='X-UA-Compatible' content='IE=edge')
+meta(name='viewport' content='width=device-width, initial-scale=1')
+title= TITLE[pId]
+link(rel='icon' type='image/vnd.microsoft.icon' href=PATH.image+'/favicon.ico')
+meta(property='og:locale' content='ja_JP')
+meta(property='og:title' content=TITLE[pId])
+meta(property='og:type' content='website')
+if OGP
+  meta(property='og:image' content=OGP)
+meta(property='og:url' content=LINK[pId])
+meta(property='og:site_name' content=TITLE[pId])
+meta(property='og:description' content=DESCRIPTION[pId])
+meta(name='keywords' content=KEYWORD[pId])
+meta(name='description' content=DESCRIPTION[pId])
+
+if GAUA
+  +ga(GAUA)
+
+block css
+  link(href=root+PATH.css+'/vendor.css' rel='stylesheet')
+  link(href=root+PATH.css+'/style.css' rel='stylesheet')
