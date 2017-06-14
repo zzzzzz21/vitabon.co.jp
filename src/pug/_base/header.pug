@@ -1,1 +1,59 @@
+
+-  var toppage = ''
+  if pId != 'top'
+    - toppage = root + '/'
+
 header#headerPage.header-page
+  h1.logo
+    a(href=root+"/")
+      img(src=root+PATH.image+"/logo.svg" alt="VITABON")
+
+  nav.menu
+    ul.items-menu
+      if pId != 'top'
+        li.item-menu
+          a(href=root+"/") TOP
+      li.item-menu
+        a(href=toppage+"#caution") 類似品について
+      li.item-menu
+        a(href=toppage+"#about") 会社概要
+      li.item-menu
+        a(href=root+LINK['privacypolicy']) プライバシーポリシー
+
+    button#buttonMenuOpen.button-menu-open
+      img(src=root+PATH.image+"/button_menu-open.png")
+
+#shield.shield
+nav#menuSub.menu-sub
+  .menu-sub-inner
+    .logo
+      img(src=root+PATH.image+"/logo_sub.svg" alt="VITABON")
+
+    ul.items-menu-sub
+      li.item-menu-sub
+        a(href=root+"/") TOP
+      li.item-menu-sub
+        | LINEUP
+        ul.items-menu-sub-inner.menu-fullpage
+          if pId != 'top'
+            for i in ITEMS
+              li.item-menu-sub-inner
+                a(href=toppage+"#"+i.code)
+                  span.color-name= i.code
+                  span.name= i.name
+          else
+            for i in ITEMS
+              li.item-menu-sub-inner
+                a(href="#"+i.code data-menuanchor=i.code)
+                  span.color-name= i.code
+                  span.name= i.name
+
+      li.item-menu-sub
+        a(href=toppage+"#caution") 類似品について
+      li.item-menu-sub
+        a(href=toppage+"#about") 会社概要
+      li.item-menu-sub
+        a(href=root+LINK['privacypolicy']) プライバシーポリシー
+
+  button#buttonMenuClose.button-menu-close
+    img(src=root+PATH.image+"/button_menu-close.png")

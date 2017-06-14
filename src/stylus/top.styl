@@ -1,0 +1,500 @@
+.main-top
+  margin-top 0
+  mt-sm 0
+  mt-xs 0
+  .return-top
+    position absolute
+    bottom 100px
+    b-sm 15 + 45px
+    w-xs 100%
+    pr-xs 20px
+    img
+      w-xs 22px
+
+  + .pagination
+    font-size 0
+    dn-xs()
+    position fixed
+    top 50%
+    left -380px
+    l-sm -235px
+    z-index 100
+    transform translateY(-50%)
+    img
+      height 30px
+      h-sm 18px
+      width auto
+      vertical-align middle
+    span
+      vertical-align middle
+      display inline-block
+      font-size 13px
+      fz-sm 10
+      opacity 0
+      transition opacity .3s
+    .active span
+      opacity 1
+    .color-name
+      margin-left 30px
+      ml-sm 22px
+      width 60px
+      w-sm 45px
+      text-transform: uppercase;
+    a
+      color #fff
+    li
+      position relative
+      &::after
+        content ""
+        display inline-block
+        width 8px
+        height 8px
+        sz-sm(5px, 5px)
+        position absolute
+        background-color #fff
+        border-radius 100px
+        left: 420px
+        l-sm 255px
+        margin auto
+        top 0
+        bottom 0
+      &:nth-of-type(2)
+      &:nth-of-type(5)
+        span
+          color #999
+
+    li + li
+      margin-top 15px
+      mt-sm 12px
+
+.fp-viewing-white
+.fp-viewing-black
+  .pagination
+    li
+      &::after
+        background-color #999
+
+.fp-viewing-top
+.fp-viewing-sns
+.fp-viewing-caution
+.fp-viewing-about
+  .pagination
+    display none
+
+.section
+  bg(center, center)
+  background-size cover
+  width 100%
+  height 100%
+
+.link-up
+.link-down
+  position absolute
+  width 100%
+  bg(center, center)
+  opacity .6
+  height 100px
+  h-sm 50px
+  display inline-block
+  z-index 700
+  dn-xs()
+  bgsz-sm(25px auto)
+
+.link-up
+  top 85px
+  t-sm 45px
+  background-image url(path_image/arrow_up.png)
+.link-down
+  bottom 0
+  background-image url(path_image/arrow_down.png)
+
+.billboard-top
+  background-image url(path_image/billboard_top.jpg)
+  background-position 50% 85px
+  sm({
+    background-position: 50% 45px
+  })
+  xs({
+    background-image: url(path_image/billboard_top_sp.jpg)
+    background-position: 100% 45px
+  })
+  .link-down
+    db-xs()
+    xs({
+      background-color: #333
+      bottom: 0
+      width: 100%
+      height:44px
+      opacity: 1
+      background-size: 30px
+    })
+  > .copy
+    position absolute
+    top 60 + 85 px
+    t-sm 35 + 45 px
+    t-xs 12 + 45 px
+    left 85px
+    l-sm 45px
+    l-xs 8px
+    font-size 82px
+    fz-sm 45px
+    fz-xs 34
+    text-shadow 0 0 5px alpha(#d794b6, .13)
+    letter-spacing .4em
+    color #fff
+    line-height (102 / 82)
+    lh-xs(83/67)
+  .product
+    dn-xs()
+    position absolute
+    bottom (120 / 1090 * 100)%
+    left 85px
+    l-sm 45px
+    .copy
+      font-size 24px
+      fz-sm 13px
+      color #8f7263
+      margin-left 30px
+      ml-sm 15px
+      margin-bottom 20px
+      mb-sm 10px
+    li
+      font-size 13px
+      fz-sm 11px
+      img
+        vertical-align middle
+        w-sm 260px
+        h-sm auto
+      a
+        display block
+        color #fff
+        .name
+        .color-name
+          display inline-block
+          vertical-align middle
+        .color-name
+          text-transform: uppercase;
+          margin-left 18px
+          ml-sm 10px
+          width 60px
+          w-sm 55px
+      + li
+        margin-top 20px
+        mt-sm 10px
+  .font-zero
+    dn-xs()
+    position absolute
+    right 35px
+    r-sm 20px
+    bottom 40px
+    b-sm 20px
+    width 100px
+    w-sm 55px
+    height 133px
+    h-sm 70px
+    img
+      width 100%
+      height auto
+
+for i in items
+  .item-{i}
+    background-image url(path_image+'/bg_'+i+'.jpg')
+
+.section-item
+  color #fff
+  .header-section-item
+    position absolute
+    top 50 + 85 px
+    t-sm 30 + 45px
+    t-xs 15 + 45px
+    left 50px
+    l-sm 25px
+    l-xs 12px
+    h2
+      line-height 1
+      .color-name
+        display inline-block
+        text-align left
+        text-transform:  uppercase;
+        vertical-align middle
+        font-size 60px
+        fz-sm 32
+        fz-xs 30
+      small
+        display inline-block
+        margin-left 15px
+        ml-xs 10px
+        font-size 18px
+        fz-sm 11
+        fz-xs 11
+        text-align left
+        vertical-align middle
+  .copy
+    position absolute
+    top 130 + 85 px
+    t-sm 70 + 45px
+    t-xs 60 + 45px
+    left 50px
+    l-sm 25px
+    l-xs 12px
+    font-size 36px
+    fz-sm 19
+    fz-xs 15px
+    letter-spacing .1em
+    line-height (60 / 36)
+    l-xs(48/30)
+
+  .item-photo
+    position absolute
+    display inline-block
+    margin auto
+    trbl0()
+    width 491px
+    height 36px
+    w-sm 265px
+    h-sm 20px
+    w-xs 245px
+    h-xs 24px
+    img
+      width 100%
+      height auto
+
+  .ingredients
+    position absolute
+    bottom 80px
+    b-sm 50px
+    b-xs 16px
+    right 40px
+    r-sm 10px
+    r-xs 16px
+    color #333
+    font-size 14px
+    fz-sm 10
+    fz-xs 8
+    width 210px
+    w-sm 120px
+    w-xs 120px
+    h3
+      border-bottom-width 1px
+      border-bottom-style solid
+      border-color #333
+      padding-bottom 5px
+      margin-bottom 5px
+      padding-left 5px
+    .items-ingredients
+      font-size 0
+      dt
+      dd
+        display inline-block
+        font-size 14px
+        fz-sm 10
+        fz-xs 8
+        padding 0 5px
+      dt
+        width 120px
+        w-sm 65px
+        w-xs 65px
+      dd
+        width 90px
+        w-sm 50px
+        w-xs 50px
+
+  &.item-white
+    color #999
+    .ingredients
+      color #999
+      h3
+        border-bottom-color #999
+  &.item-black
+    .ingredients
+      color #999
+      h3
+        border-bottom-color #999
+  &.item-yellow
+    .ingredients
+      color #7e4c42
+      h3
+        border-bottom-color #7e4c42
+
+
+.section-sns
+  width 1280px
+  w-sm 640px
+  w-xs 100%
+  margin 0 auto
+  m-xs 0
+  padding 85 + 90px 90px 140px
+  p-sm(45+50px 30px 70px)
+  p-xs((45 + 30px) 0 60px)
+  border-bottom 1px solid  #ccc
+  cf()
+
+.container-twitter-timeline
+.container-facebook-timeline
+  width 500px
+  w-sm 272px
+  w-xs 252px
+  overflow hidden
+  mr-xs auto
+  ml-xs auto
+  h3
+    height 70px
+    h-sm 35px
+    h-xs 35px
+    line-height 70px
+    lh-sm 35px
+    lh-xs 35px
+    font-size 16px
+    fz-sm 11px
+    fz-xs 10px
+    padding-left 90px
+    pl-sm 45px
+    pl-xs 50px
+    margin-bottom 34px
+    mb-sm 20px
+    mb-xs 15px
+    font-goth()
+    bg(left, center)
+    bgsz-sm 35px auto
+    bgsz-xs 35px auto
+    small
+      display inline-block
+      color #ccc
+
+.container-twitter-timeline
+  float left
+  fln-xs()
+  h3
+    background-image url(path_image/icon_twitter.png)
+
+.container-facebook-timeline
+  float right
+  fln-xs()
+  mt-xs 45px
+  h3
+    background-image url(path_image/icon_facebook.png)
+
+.block-twitter-timeline
+.block-facebook-timeline
+  overflow hidden
+  width 100%
+  height 502px
+  h-sm 270px
+  h-xs 252px
+  border 1px solid  #ccc
+
+.section-caution
+  padding-top 80px
+  pt-xs 40px
+  font-goth()
+  h3
+    padding-top 90px
+    pt-sm 36px
+    pt-xs 36px
+    bg(center, top)
+    background-image url(path_image/icon_caution.png)
+    bgsz-sm 38px auto
+    bgsz-xs 38px auto
+    text-align center
+    font-size 36px
+    fz-sm 19px
+    fz-xs 18px
+    color #c00
+    letter-spacing .2em
+    margin-bottom 50px
+    mb-sm 25px
+    mb-xs 20px
+  .text
+    width 960px
+    w-sm 520px
+    w-xs auto
+    margin 0 auto 140px
+    mb-sm 70px
+    m-xs(0 15px 60px)
+    font-size 18px
+    fz-sm 12px
+    fz-xs 9px
+    line-height 2
+
+  .contact
+    background-color #999
+    text-align center
+    padding 100px 0 80px
+    p-xs(50px 0 40px)
+    color #fff
+    h4
+      width 560px
+      w-sm 320px
+      margin-right auto
+      margin-left auto
+      font-size 30px
+      fz-sm 16px
+      fz-xs 15px
+      padding 0
+      border 1px solid  #fff
+      height 60px
+      h-sm 40px
+      h-xs 30px
+      line-height 60px
+      lh-sm 40px
+      lh-xs 30px
+      m-xs(0 32px)
+      text-align center
+    .tel
+      font-size 48px
+      fz-sm 26
+      fz-xs 24
+      line-height 1.2
+      margin-top 10px
+      mt-xs 5px
+      small
+        display block
+        font-size 20px
+        fz-sm 11
+        fz-xs 10
+
+.section-about
+  padding-top 130px
+  pt-xs 45px
+  font-goth()
+  h3
+    font-size 36px
+    fz-sm 19px
+    fz-xs 18px
+    text-align center
+    small
+      font-size 18px
+      fz-sm 10px
+      fz-xs 9
+      display block
+  ul
+    width 840px
+    w-sm 450px
+    w-xs auto
+    margin 60px auto 210px
+    m-sm(30px auto 120px)
+    m-xs(30px 20px 125px)
+    font-size 0
+    border-top 1px solid  #ccc
+    li
+      border-bottom 1px solid  #ccc
+      font-size 16px
+      fz-sm 12px
+      fz-xs 8px
+    .index
+    .content
+      display inline-block
+      height 70px
+      h-sm 38px
+      h-xs 38px
+      line-height 70px
+      lh-sm 38px
+      lh-xs 38px
+    .index
+      width 230px
+      w-sm 120px
+      w-xs((145 / 640 * 100)%)
+    .content
+      width 600px
+      w-sm 320px
+      w-xs(((600 - 145) / 640 * 100)%)

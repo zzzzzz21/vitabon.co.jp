@@ -1,0 +1,184 @@
+.header-page
+  top 0
+  position fixed
+  height 86px
+  h-sm 45px
+  h-xs 45px
+  padding-right 20px
+  pr-sm 15px
+  pr-xs 0
+  padding-left 20px
+  pl-sm 15px
+  pl-xs 0
+  width 100%
+  z-index 999
+  background-color #fff
+
+  .logo
+    display inline-block
+    height 66px
+    h-sm 35px
+    h-xs 40px
+    margin-top 10px
+    mt-sm 5px
+    mt-xs 3px
+    ml-xs 3px
+    img
+      width auto
+      height 100%
+
+  .menu
+    float right
+    font-size 14px
+    fz-sm 12px
+    margin-top ((86 - 45) / 2)px
+    mt-sm 10px
+    mt-xs 0
+
+    .button-menu-open
+      display inline-block
+      vertical-align middle
+      line-height 0
+      h-sm 25px
+      w-sm 25px
+      xs({
+        background-color: #333
+      })
+      img
+        width 100%
+        height auto
+
+  .items-menu
+    display inline-block
+    vertical-align middle
+    dn-xs()
+    a
+      color #666
+    li
+      display inline-block
+      margin-right 30px
+      mr-sm 15px
+
+.shield
+.menu-sub
+  display none
+
+.shield
+  trbl0()
+  background-color alpha(#000, .8)
+  height 100%
+  z-index 1900
+  position fixed
+
+.menu-sub
+  position absolute
+  top 0
+  width 100%
+  z-index 2000
+  font-size 14px
+  fz-xs 15px
+  @media (max-width: 767px)
+    font-goth()
+  padding-top 130px
+  pt-sm 70px
+  pt-sm (130 / 1000 * 100)vh
+  pt-xs 0
+  a
+  li
+    color #fff
+  li
+    line-height 1
+  .button-menu-close
+    position fixed
+    line-height 1
+    top 21px
+    t-sm 10px
+    t-xs 0
+    right 20px
+    r-sm 15px
+    r-xs 0
+    h-sm 25px
+    w-sm 25px
+    xs({
+      background-color: #fff
+    })
+    img
+      width 100%
+  .logo
+    text-align center
+    h-sm 40px
+    dn-xs()
+    img
+      width auto
+      height 100%
+
+  .items-menu-sub
+    width 460px
+    w-xs 100%
+    margin 70px auto 0
+    m-sm(35px auto 0)
+    border-left 1px solid  #fff
+    xs({
+      margin-top: 60px
+      border-left: none
+      border-top: 1px solid  #fff
+    })
+
+  .item-menu-sub
+    padding-left 30px
+    margin-bottom 50px
+    mb-sm 30px
+    mb-sm (50 / 1000 * 100)vh
+    mb-xs 0
+    cf()
+    clear right
+    lh-xs(40px)
+    xs({
+      border-bottom: 1px solid  #fff
+    })
+
+  .items-menu-sub-inner
+    display inline-block
+    vertical-align top
+    float right
+    padding-left 30px
+    pl-xs 0
+    margin-bottom 0
+    w-xs((460/640*100)%)
+
+  .item-menu-sub-inner
+    margin-bottom 30px
+    mb-sm 20px
+    mb-sm (30 / 1000 * 100)vh
+    mb-xs 0
+    lh-xs(1.4)
+    xs({
+      border-bottom: 1px solid  #fff
+    })
+    &:last-of-type
+      border none
+      margin-bottom 0
+    .color-name
+      text-transform: uppercase;
+      display inline-block
+      width 80px
+      w-xs 100%
+      db-xs()
+      &::before
+        content "・ "
+    .name
+      db-xs()
+      ml-xs 1.5em
+
+.menu-opened
+  .shield
+  .menu-sub
+    display block
+    opacity 0
+    animation fadeIn alternate .3s forwards
+
+@keyframes fadeIn
+  0%
+    opacity 0
+  100%
+    opacity 1

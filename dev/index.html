@@ -5,22 +5,320 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title></title>
-    <link rel="icon" type="image/vnd.microsoft.icon" href="/asset/image/favicon.ico">
+    <link rel="icon" type="image/vnd.microsoft.icon" href="./asset/image/favicon.ico">
     <meta property="og:locale" content="ja_JP">
     <meta property="og:title" content="">
     <meta property="og:type" content="website">
     <meta property="og:url" content="/">
-    <meta property="og:site_name" content="">
+    <meta property="og:site_name" content="vitabon">
     <meta property="og:description" content="">
     <meta name="keywords" content="">
     <meta name="description" content="">
-    <link href="./asset/css/vendor.css" rel="stylesheet">
+    <link href="./asset/lib/jquery.fullpage/jquery.fullpage.min.css" rel="stylesheet">
     <link href="./asset/css/style.css" rel="stylesheet">
   </head>
   <body>
-    <header class="header-page" id="headerPage"></header>
-    <footer class="footer-page" id="footerPage"></footer>
-    <script src="./asset/js/vendor.js"></script>
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (d.getElementById(id)) return; js = d.createElement(s); js.id = id; js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.9"; fjs.parentNode.insertBefore(js, fjs); }(document, 'script', 'facebook-jssdk'));</script>
+    <header class="header-page" id="headerPage">
+      <h1 class="logo"><a href="./"><img src="./asset/image/logo.svg" alt="VITABON"></a></h1>
+      <nav class="menu">
+        <ul class="items-menu">
+          <li class="item-menu"><a href="#caution">類似品について</a></li>
+          <li class="item-menu"><a href="#about">会社概要</a></li>
+          <li class="item-menu"><a href="./privacypolicy.html">プライバシーポリシー</a></li>
+        </ul>
+        <button class="button-menu-open" id="buttonMenuOpen"><img src="./asset/image/button_menu-open.png"></button>
+      </nav>
+    </header>
+    <div class="shield" id="shield"></div>
+    <nav class="menu-sub" id="menuSub">
+      <div class="menu-sub-inner">
+        <div class="logo"><img src="./asset/image/logo_sub.svg" alt="VITABON"></div>
+        <ul class="items-menu-sub">
+          <li class="item-menu-sub"><a href="./">TOP</a></li>
+          <li class="item-menu-sub">LINEUP
+            <ul class="items-menu-sub-inner menu-fullpage">
+              <li class="item-menu-sub-inner"><a href="#green" data-menuanchor="green"><span class="color-name">green</span><span class="name">ミント・メンソール</span></a></li>
+              <li class="item-menu-sub-inner"><a href="#white" data-menuanchor="white"><span class="color-name">white</span><span class="name">バニラ・​グリーンティー</span></a></li>
+              <li class="item-menu-sub-inner"><a href="#blue" data-menuanchor="blue"><span class="color-name">blue</span><span class="name">ジャスミン​・ローズ</span></a></li>
+              <li class="item-menu-sub-inner"><a href="#gold" data-menuanchor="gold"><span class="color-name">gold</span><span class="name">ミント・​チェリー</span></a></li>
+              <li class="item-menu-sub-inner"><a href="#black" data-menuanchor="black"><span class="color-name">black</span><span class="name">ジンセン・シナモン</span></a></li>
+              <li class="item-menu-sub-inner"><a href="#purple" data-menuanchor="purple"><span class="color-name">purple</span><span class="name">ブルーベリー・​ブラックカシス</span></a></li>
+              <li class="item-menu-sub-inner"><a href="#yellow" data-menuanchor="yellow"><span class="color-name">yellow</span><span class="name">オレンジ・グレープフルーツ</span></a></li>
+            </ul>
+          </li>
+          <li class="item-menu-sub"><a href="#caution">類似品について</a></li>
+          <li class="item-menu-sub"><a href="#about">会社概要</a></li>
+          <li class="item-menu-sub"><a href="./privacypolicy.html">プライバシーポリシー</a></li>
+        </ul>
+      </div>
+      <button class="button-menu-close" id="buttonMenuClose"><img src="./asset/image/button_menu-close.png"></button>
+    </nav>
+    <main class="main main-top" id="mainTop">
+      <section class="section billboard billboard-top" id="billboardTop">
+        <div class="copy">唇はビタミンに<br>恋をする</div>
+        <div class="product">
+          <div class="copy">7種類の選べるオーガニックフレーバー</div>
+          <ul id="menuFullpage">
+            <li><a class="link-inner" href="#green" data-menuanchor="green"><img src="./asset/image/item_green.png" alt="ミント・メンソール"><span class="color-name">green</span><span class="name">ミント・メンソール</span></a></li>
+            <li><a class="link-inner" href="#white" data-menuanchor="white"><img src="./asset/image/item_white.png" alt="バニラ・​グリーンティー"><span class="color-name">white</span><span class="name">バニラ・​グリーンティー</span></a></li>
+            <li><a class="link-inner" href="#blue" data-menuanchor="blue"><img src="./asset/image/item_blue.png" alt="ジャスミン​・ローズ"><span class="color-name">blue</span><span class="name">ジャスミン​・ローズ</span></a></li>
+            <li><a class="link-inner" href="#gold" data-menuanchor="gold"><img src="./asset/image/item_gold.png" alt="ミント・​チェリー"><span class="color-name">gold</span><span class="name">ミント・​チェリー</span></a></li>
+            <li><a class="link-inner" href="#black" data-menuanchor="black"><img src="./asset/image/item_black.png" alt="ジンセン・シナモン"><span class="color-name">black</span><span class="name">ジンセン・シナモン</span></a></li>
+            <li><a class="link-inner" href="#purple" data-menuanchor="purple"><img src="./asset/image/item_purple.png" alt="ブルーベリー・​ブラックカシス"><span class="color-name">purple</span><span class="name">ブルーベリー・​ブラックカシス</span></a></li>
+            <li><a class="link-inner" href="#yellow" data-menuanchor="yellow"><img src="./asset/image/item_yellow.png" alt="オレンジ・グレープフルーツ"><span class="color-name">yellow</span><span class="name">オレンジ・グレープフルーツ</span></a></li>
+          </ul>
+        </div>
+        <div class="font-zero"><img src="/asset/image/logo_zero.png" alt="タール ニコチン 受動喫煙 zero"></div><a class="link-inner link-down" href="#green"></a>
+      </section>
+      <section class="section section-item item-green" id="section_green"><a class="link-inner link-up" href="#top" data-link="top"></a>
+        <header class="header-section-item">
+          <h2><span class="color-name">green</span><small class="name">ミント・メンソール</small></h2>
+        </header>
+        <p class="copy">ユーカリの木とミントの豆から<br class='br-sp'>抽出した天然成分配合。<br>ミントの香りは精神的な緊張を<br class='br-sp'>和らげ、<br>イライラをしずめ、<br class='br-sp'>心身をリラックス</p>
+        <figure class="item-photo"><img src="./asset/image/item_green.png" alt="ミント・メンソール"></figure>
+        <div class="ingredients">
+          <h3>主成分</h3>
+          <dl class="items-ingredients">
+            <dt>Vitamin A</dt>
+            <dd>1IU</dd>
+            <dt>Vitamin B1</dt>
+            <dd>150mcg</dd>
+            <dt>Vitamin C</dt>
+            <dd>200mcg</dd>
+            <dt>Vitamin E</dt>
+            <dd>200mcg</dd>
+            <dt>CoQ10</dt>
+            <dd>6mcg</dd>
+            <dt>Eucalyptol</dt>
+            <dd>1000mcg</dd>
+          </dl>
+        </div><a class="link-inner link-down" href="#white" data-link="white"></a>
+      </section>
+      <section class="section section-item item-white" id="section_white"><a class="link-inner link-up" href="#green" data-link="green"></a>
+        <header class="header-section-item">
+          <h2><span class="color-name">white</span><small class="name">バニラ・​グリーンティー</small></h2>
+        </header>
+        <p class="copy">バニラビーンズと天然ハーブエキス配合。<br>バニラの特徴的な甘い香りは、<br>怒りやフラストレーション、<br class='br-sp'>緊張を和らげ、幸せな気分に。</p>
+        <figure class="item-photo"><img src="./asset/image/item_white.png" alt="バニラ・​グリーンティー"></figure>
+        <div class="ingredients">
+          <h3>主成分</h3>
+          <dl class="items-ingredients">
+            <dt>Vitamin A</dt>
+            <dd>1IU</dd>
+            <dt>Vitamin B1</dt>
+            <dd>150mcg</dd>
+            <dt>Vitamin C</dt>
+            <dd>200mcg</dd>
+            <dt>Vitamin E</dt>
+            <dd>200mcg</dd>
+            <dt>CoQ10</dt>
+            <dd>6mcg</dd>
+            <dt>Valerian</dt>
+            <dd>1000mcg</dd>
+          </dl>
+        </div><a class="link-inner link-down" href="#blue" data-link="blue"></a>
+      </section>
+      <section class="section section-item item-blue" id="section_blue"><a class="link-inner link-up" href="#white" data-link="white"></a>
+        <header class="header-section-item">
+          <h2><span class="color-name">blue</span><small class="name">ジャスミン​・ローズ</small></h2>
+        </header>
+        <p class="copy">松の木のエキスから抽出した<br class='br-sp'>テルペン成分配合。<br>ジャスミンの香りは、<br class='br-sp'>官能的な感情を呼び覚ます。<br>心にゆとりとバランスを。</p>
+        <figure class="item-photo"><img src="./asset/image/item_blue.png" alt="ジャスミン​・ローズ"></figure>
+        <div class="ingredients">
+          <h3>主成分</h3>
+          <dl class="items-ingredients">
+            <dt>Vitamin A</dt>
+            <dd>1IU</dd>
+            <dt>Vitamin B1</dt>
+            <dd>150mcg</dd>
+            <dt>Vitamin C</dt>
+            <dd>200mcg</dd>
+            <dt>Vitamin E</dt>
+            <dd>200mcg</dd>
+            <dt>CoQ10</dt>
+            <dd>6mcg</dd>
+            <dt>Pinene</dt>
+            <dd>500mcg</dd>
+          </dl>
+        </div><a class="link-inner link-down" href="#gold" data-link="gold"></a>
+      </section>
+      <section class="section section-item item-gold" id="section_gold"><a class="link-inner link-up" href="#blue" data-link="blue"></a>
+        <header class="header-section-item">
+          <h2><span class="color-name">gold</span><small class="name">ミント・​チェリー</small></h2>
+        </header>
+        <p class="copy">チェリーエキスに<br class='br-sp'>コラーゲンを配合。<br>チェリーのさわやかな香りと<br class='br-sp'>ミントの爽快感、<br>至福のひと時を。</p>
+        <figure class="item-photo"><img src="./asset/image/item_gold.png" alt="ミント・​チェリー"></figure>
+        <div class="ingredients">
+          <h3>主成分</h3>
+          <dl class="items-ingredients">
+            <dt>Vitamin A</dt>
+            <dd>1IU</dd>
+            <dt>Vitamin B1</dt>
+            <dd>150mcg</dd>
+            <dt>Vitamin C</dt>
+            <dd>200mcg</dd>
+            <dt>Vitamin E</dt>
+            <dd>200mcg</dd>
+            <dt>CoQ10</dt>
+            <dd>6mcg</dd>
+            <dt>Collagen</dt>
+            <dd>1000mcg</dd>
+          </dl>
+        </div><a class="link-inner link-down" href="#black" data-link="black"></a>
+      </section>
+      <section class="section section-item item-black" id="section_black"><a class="link-inner link-up" href="#gold" data-link="gold"></a>
+        <header class="header-section-item">
+          <h2><span class="color-name">black</span><small class="name">ジンセン・シナモン</small></h2>
+        </header>
+        <p class="copy">ジンセンとシナモンから抽出した<br class='br-sp'>天然成分配合。<br>シナモンの香りは、<br class='br-sp'>ストレスを解消し、気力を回復。<br>気持ちを高めるのに効果的。</p>
+        <figure class="item-photo"><img src="./asset/image/item_black.png" alt="ジンセン・シナモン"></figure>
+        <div class="ingredients">
+          <h3>主成分</h3>
+          <dl class="items-ingredients">
+            <dt>Vitamin A</dt>
+            <dd>1IU</dd>
+            <dt>Vitamin B1</dt>
+            <dd>150mcg</dd>
+            <dt>Vitamin C</dt>
+            <dd>200mcg</dd>
+            <dt>Vitamin E</dt>
+            <dd>200mcg</dd>
+            <dt>CoQ10</dt>
+            <dd>6mcg</dd>
+            <dt>B-Caryophyllene</dt>
+            <dd>1000mcg</dd>
+          </dl>
+        </div><a class="link-inner link-down" href="#purple" data-link="purple"></a>
+      </section>
+      <section class="section section-item item-purple" id="section_purple"><a class="link-inner link-up" href="#black" data-link="black"></a>
+        <header class="header-section-item">
+          <h2><span class="color-name">purple</span><small class="name">ブルーベリー・​ブラックカシス</small></h2>
+        </header>
+        <p class="copy">ブルーベリー系の果物から抽出した<br class='br-sp'>天然成分配合。<br>カシスは甘酸っぱい香りで、<br class='br-sp'>ゆったりとした気分に。<br>ほっと一息つきたい時などに。</p>
+        <figure class="item-photo"><img src="./asset/image/item_purple.png" alt="ブルーベリー・​ブラックカシス"></figure>
+        <div class="ingredients">
+          <h3>主成分</h3>
+          <dl class="items-ingredients">
+            <dt>Vitamin A</dt>
+            <dd>1IU</dd>
+            <dt>Vitamin B1</dt>
+            <dd>150mcg</dd>
+            <dt>Vitamin C</dt>
+            <dd>200mcg</dd>
+            <dt>Vitamin E</dt>
+            <dd>200mcg</dd>
+            <dt>CoQ10</dt>
+            <dd>6mcg</dd>
+            <dt>B-Myrcene</dt>
+            <dd>1000mcg</dd>
+          </dl>
+        </div><a class="link-inner link-down" href="#yellow" data-link="yellow"></a>
+      </section>
+      <section class="section section-item item-yellow" id="section_yellow"><a class="link-inner link-up" href="#purple" data-link="purple"></a>
+        <header class="header-section-item">
+          <h2><span class="color-name">yellow</span><small class="name">オレンジ・グレープフルーツ</small></h2>
+        </header>
+        <p class="copy">オレンジ系果物から抽出した<br class='br-sp'>天然成分配合。<br>オレンジとグレープフルーツの<br>爽やかな柑橘系の​香りで<br class='br-sp'>気分をリフレッシュ。</p>
+        <figure class="item-photo"><img src="./asset/image/item_yellow.png" alt="オレンジ・グレープフルーツ"></figure>
+        <div class="ingredients">
+          <h3>主成分</h3>
+          <dl class="items-ingredients">
+            <dt>Vitamin A</dt>
+            <dd>1IU</dd>
+            <dt>Vitamin B1</dt>
+            <dd>150mcg</dd>
+            <dt>Vitamin C</dt>
+            <dd>200mcg</dd>
+            <dt>Vitamin E</dt>
+            <dd>200mcg</dd>
+            <dt>CoQ10</dt>
+            <dd>6mcg</dd>
+            <dt>D-Limonene</dt>
+            <dd>1000mcg</dd>
+          </dl>
+        </div><a class="link-inner link-down" href="#etc" data-link="etc"></a>
+      </section>
+      <section class="section section-part section-sns" id="section_sns">
+        <div class="container-twitter-timeline">
+          <h3>VITABON公式 Twitter<small>(@VITABON_JP)</small></h3>
+          <div class="block-twitter-timeline"><a class="twitter-timeline" data-lang="ja" data-width="500" data-height="500" data-theme="light" href="https://twitter.com/VITABON_JP">Tweets by VITABON_JP</a>
+            <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+          </div>
+        </div>
+        <div class="container-facebook-timeline">
+          <h3>VITABON公式 Facebook<small>(@vitabon.official)</small></h3>
+          <div class="block-facebook-timeline">
+            <div class="fb-page" data-href="https://www.facebook.com/vitabon.official" data-tabs="timeline" data-small-header="true" data-width="500" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
+              <blockquote class="fb-xfbml-parse-ignore" cite="https://www.facebook.com/vitabon.official"><a href="https://www.facebook.com/vitabon.official"></a></blockquote>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section section-part section-caution" id="section_caution">
+        <h3>類似品にご注意下さい！</h3>
+        <p class="text">VITABONは、厳しい検査を受け、身体に悪い成分が無いと認可を受けた安全な商品です。ビタミンA・B・C・EとコエンザイムQ10、そして最上級の天然成分が蒸気となることで芳醇な香りをお楽しみいただけます。１本で約500回の吸い込みが可能で充電も不要。周りを気にすることなく、気軽にいつでもどこでもお楽しみいただけるまったく新しいタイプの嗜好品です。<br>近年、店頭並びにインターネットにおいて、VITABONの類似品、VITA●●など似通った名称のもの、また許可なく公式販売を表示するケースが見受けられます。<br>ご購入の際には、VITABON（ビタボン）の正式名称が表記されている商品をお買い求めいただき、類似品にはくれぐれもご注意ください。</p>
+        <div class="contact">
+          <h4>VITABON カスタマーセンター</h4>
+          <div class="tel">TEL：03-4577-8644<small>受付時間 10:00～20:00（年中無休）</small></div>
+        </div>
+      </section>
+      <section class="section section-part section-about" id="section_about">
+        <h3>会社案内<small>About Us</small></h3>
+        <ul>
+          <li>
+            <div class="index">会社名</div>
+            <div class="content">株式会社VITA　　VITA.INC</div>
+          </li>
+          <li>
+            <div class="index">代表取締役</div>
+            <div class="content">河村　道男</div>
+          </li>
+          <li>
+            <div class="index">所在地</div>
+            <div class="content">〒108-0073  東京都港区三田4丁目 12－14 ​CHANEX B-01</div>
+          </li>
+          <li>
+            <div class="index">設立</div>
+            <div class="content">平成13年9月4日</div>
+          </li>
+          <li>
+            <div class="index">事業内容</div>
+            <div class="content">ヴィタボンの企画・開発・販売</div>
+          </li>
+          <li>
+            <div class="index">電話番号</div>
+            <div class="content">03-3453-7889</div>
+          </li>
+          <li>
+            <div class="index">FAX番号</div>
+            <div class="content">03-5539-4539</div>
+          </li>
+          <li>
+            <div class="index">​メール</div>
+            <div class="content"><a  href='mailto:info@vitabon.co.jp'>info@vitabon.co.jp</a></div>
+          </li>
+        </ul>
+        <nav class="return-top"><a class="link-inner" id="buttonReturnTop" href="#top" data-menuanchor="top"><img src="./asset/image/button_return-top.png" alt="TOP"></a></nav>
+        <footer class="footer-page" id="footerPage">
+          <div class="copyright">Copyright &copy; vita.inc. All Rights Reserved.</div>
+        </footer>
+      </section>
+    </main>
+    <ul class="pagination" id="pagination">
+      <li data-menuanchor="green"><a href="#green"><img src="./asset/image/item_green.png" alt="ミント・メンソール"><span class="color-name">green</span><span class="name">ミント・メンソール</span></a></li>
+      <li data-menuanchor="white"><a href="#white"><img src="./asset/image/item_white.png" alt="バニラ・​グリーンティー"><span class="color-name">white</span><span class="name">バニラ・​グリーンティー</span></a></li>
+      <li data-menuanchor="blue"><a href="#blue"><img src="./asset/image/item_blue.png" alt="ジャスミン​・ローズ"><span class="color-name">blue</span><span class="name">ジャスミン​・ローズ</span></a></li>
+      <li data-menuanchor="gold"><a href="#gold"><img src="./asset/image/item_gold.png" alt="ミント・​チェリー"><span class="color-name">gold</span><span class="name">ミント・​チェリー</span></a></li>
+      <li data-menuanchor="black"><a href="#black"><img src="./asset/image/item_black.png" alt="ジンセン・シナモン"><span class="color-name">black</span><span class="name">ジンセン・シナモン</span></a></li>
+      <li data-menuanchor="purple"><a href="#purple"><img src="./asset/image/item_purple.png" alt="ブルーベリー・​ブラックカシス"><span class="color-name">purple</span><span class="name">ブルーベリー・​ブラックカシス</span></a></li>
+      <li data-menuanchor="yellow"><a href="#yellow"><img src="./asset/image/item_yellow.png" alt="オレンジ・グレープフルーツ"><span class="color-name">yellow</span><span class="name">オレンジ・グレープフルーツ</span></a></li>
+    </ul>
+    <script src="./asset/lib/jquery/jquery.min.js"></script>
     <script src="./asset/js/main.js"></script>
+    <script src="./asset/lib/jquery.fullpage/scrolloverflow.min.js"></script>
+    <script src="./asset/lib/jquery.fullpage/jquery.fullpage.min.js"></script>
+    <script src="./asset/js/top.js"></script>
   </body>
 </html>

@@ -1,3 +1,6 @@
+path_image = '../image'
+items = ('green' 'white' 'blue' 'gold' 'black' 'purple' 'yellow')
+
 // ベース
 body
 html
@@ -12,8 +15,11 @@ html
 }
 
 body
-  color #fff
-  background-color $color-bg
+  font-min()
+
+.br-sp
+  display none
+  db-xs()
 
 a
   outline none
@@ -26,28 +32,30 @@ a
     opacity .5
     text-decoration none
 
-.hidden-lg
-  dn-lg()
-.hidden-md
-  dn-md()
-.hidden-sm
-  dn-sm()
-.hidden-xs
-  dn-xs()
+.main
+  margin-top 85px
+  mt-sm 45px
+  mt-xs 45px
+  position relative
+  z-index 1
 
-// 基本レイアウト
-.container
-.header-page
-.footer-page
-  margin-right auto
-  margin-left auto
-  w-xs auto
-  mr-xs 20px
-  ml-xs 20px
+.return-top
+  width 1080px
+  w-sm 90%
+  position fixed
+  text-align right
+  right 0
+  left 0
+  bottom 30px
+  margin 0 auto
+  z-index 500
+  transition all .5s
+  pointer-events: none;
+  a
+    pointer-events: all;
 
-.header-page
-.footer-page
-  width 1460px
+  .scroll-top &
+    opacity 0
 
-.container
-  width 1330px
+  .scroll-bottom &
+    transform translateY(-80px)

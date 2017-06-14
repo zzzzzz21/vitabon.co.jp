@@ -37,38 +37,49 @@ DEV =
   html: "#{DEV_ROOT}"
   css: "#{DEV_ROOT}/asset/css"
   js: "#{DEV_ROOT}/asset/js"
+  lib: "#{DEV_ROOT}/asset/lib"
 
-LIB_JS = [
-  "#{MODS}/jquery/dist/jquery.min.js"
-  "#{MODS}/pagepiling.js/dist/jquery.pagepiling.min.js"
-]
-
-LIB_CSS = [
-  "#{MODS}/pagepiling.js/dist/jquery.pagepiling.min.css"
+LIB = [
+  {
+    src: "#{MODS}/jquery/dist/jquery.min.js"
+    dist: "jquery"
+  }
+  {
+    src: "#{SRC_ROOT}/lib/StickyStack.js-master/jquery.stickystack.js"
+    dist: "stickystack"
+  }
+  {
+    src: "node_modules/fullpage.js/vendors/scrolloverflow.min.js"
+    dist: "jquery.fullpage"
+  }
+  {
+    src: "#{MODS}/fullpage.js/dist/jquery.fullpage.min.js"
+    dist: "jquery.fullpage"
+  }
+  {
+    src: "#{MODS}/fullpage.js/dist/jquery.fullpage.min.css"
+    dist: "jquery.fullpage"
+  }
 ]
 
 WATCH =
-  pug: "#{SRC}/pug/*.pug"
-  stylus: "#{SRC}/stylus/*.styl"
-  coffee: "#{SRC}/coffee/*.coffee"
+  pug: "#{SRC_ROOT}/pug/**/*.pug"
+  stylus: "#{SRC_ROOT}/stylus/**/*.styl"
+  coffee: "#{SRC_ROOT}/coffee/**/*.coffee"
 
 # ライブラリ
-gulp.task "init:js", ->
-  gulp.src LIB_JS
-    .pipe $.concat "vendor.js"
-    .pipe gulp.dest DEV.js
-
-gulp.task "init:css", ->
-  gulp.src LIB_CSS
-    .pipe $.concat "vendor.css"
-    .pipe gulp.dest DEV.css
+gulp.task "initialize", ->
+  LIB.forEach (currentValue, index, array)->
+    gulp
+      .src currentValue.src
+      .pipe gulp.dest "#{DEV.lib}/#{currentValue.dist}"
 
 #server
 gulp.task "server", ->
   $.browserSync.init
     server: {
-      baseDir: './'
-      directory: true
+      baseDir: DEV_ROOT
+      # directory: true
     }
     port: 9001
 
@@ -122,8 +133,7 @@ gulp.task "watch", ->
 # INSTALL(ライブラリのコピー)
 gulp.task "install", ->
   $.runSequence(
-    'init:js'
-    'init:css'
+    'initialize'
   )
 
 # DEV

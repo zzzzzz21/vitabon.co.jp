@@ -1,0 +1,93 @@
+// 規約
+
+.billboard-privacypolicy
+  height 250px
+  h-xs 60px
+  bg(right, top)
+  background-image url(path_image/billboard_privacypolicy.jpg)
+  background-size cover
+  margin-bottom 60px
+  mb-xs 20px
+
+.section-privacypolicy
+  width 980px
+  w-sm auto
+  w-xs auto
+  margin 0 auto 200px
+  m-sm(0 20px 100px)
+  m-xs(0 15px 50px)
+  counter-reset jo
+  font-size 14px
+  fz-xs 9
+  line-height (30/14)
+  lh-xs(15/9)
+  font-goth()
+
+
+  h2
+    color #666
+    font-size 34px
+    fz-xs 22
+    vertical-align middle
+    margin-bottom 20px
+    small
+      font-size 16px
+      fz-xs 9
+      display inline-block
+      vertical-align middle
+      margin-left 10px
+  .lead
+    margin-bottom 80px
+    margin-bottom 40px
+  .address
+    margin-left 30px
+
+  ol
+  li
+    list-style none
+
+  // レベル1
+  > ol
+    margin-left 0
+    > li
+      + li
+        margin-top 55px
+        mt-xs 30px
+      h3
+        font-size 20px
+        fz-xs 13px
+        color #666
+        margin-bottom 25px
+        mb-xs 10px
+        &::before
+          counter-increment jo
+          content "第" counter(jo) "条 "
+      // レベル2
+      > ol
+        counter-reset ko
+        > li
+          padding-left 1em
+          text-indent -1em
+          &:before
+            counter-increment ko
+            content counter(ko) ". "
+          // レベル3
+          & > ol
+            counter-reset ban
+            margin-top 5px
+            & > li
+              padding-left 1.5em
+              text-indent -1.5em
+              &:before
+                counter-increment ban
+                content "(" counter(ban) ") "
+              // レベル4
+              & > ol
+                counter-reset ban
+                margin-top 5px
+                & > li
+                  padding-left 1.5em
+                  text-indent -1.5em
+                  &:before
+                    counter-increment ban
+                    content counter(ban, lower-roman) ". "

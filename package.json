@@ -36,7 +36,7 @@
     }
   },
   "dependencies": {
-    "jquery": "^3.2.1",
-    "pagepiling.js": "^1.5.4"
+    "fullpage.js": "^2.9.4",
+    "jquery": "^3.2.1"
   }
 }

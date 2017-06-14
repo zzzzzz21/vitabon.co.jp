@@ -11,6 +11,8 @@ html(lang='ja')
 
   body
     block body
+      if pId == 'top'
+        +fb()
 
       block header
         include header
@@ -20,6 +22,18 @@ html(lang='ja')
       block footer
         include footer
 
+    if pId != 'top'
+      nav.return-top
+        a#buttonReturnTop.link-inner(href="#" data-link='top')
+          img(src=root+PATH.image+"/button_return-top.png" alt="TOP")
+
     block script
-      script(src=root+PATH.js+"/vendor.js")
+      script(src=root+PATH.lib+'/jquery/jquery.min.js')
       script(src=root+PATH.js+"/main.js")
+
+      if pId == 'top'
+        script(src=root+PATH.lib+'/jquery.fullpage/scrolloverflow.min.js')
+        script(src=root+PATH.lib+'/jquery.fullpage/jquery.fullpage.min.js')
+        script(src=root+PATH.js+"/top.js")
+      else
+        script(src=root+PATH.js+"/page.js")
