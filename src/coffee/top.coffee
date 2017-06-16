@@ -24,5 +24,21 @@ init = ->
 $ ->
   init()
 
-  $('.item-menu-sub-inner > a').on 'click', ->
+  $('.button-menu-open, .button-menu-close').on 'click', ->
+    if ($BODY.hasClass 'menu-opened') and ($WINDOW.innerWidth() < 767)
+      $HTML.css
+        overflow: "auto"
+      $BODY.css
+        overflow: "auto"
+      $.fn.fullpage.setAutoScrolling(false)
+      $WINDOW
+        .on 'scroll', ->
+          return true
+        .scrollTop 0
+
+    else
+      $.fn.fullpage.setAutoScrolling(true)
+
+
+  $('.item-menu-sub > a, .item-menu-sub-inner > a').on 'click', ->
     $BODY.removeClass 'menu-opened'

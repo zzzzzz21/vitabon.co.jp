@@ -17,7 +17,23 @@
 
   $(function() {
     init();
-    return $('.item-menu-sub-inner > a').on('click', function() {
+    $('.button-menu-open, .button-menu-close').on('click', function() {
+      if (($BODY.hasClass('menu-opened')) && ($WINDOW.innerWidth() < 767)) {
+        $HTML.css({
+          overflow: "auto"
+        });
+        $BODY.css({
+          overflow: "auto"
+        });
+        $.fn.fullpage.setAutoScrolling(false);
+        return $WINDOW.on('scroll', function() {
+          return true;
+        }).scrollTop(0);
+      } else {
+        return $.fn.fullpage.setAutoScrolling(true);
+      }
+    });
+    return $('.item-menu-sub > a, .item-menu-sub-inner > a').on('click', function() {
       return $BODY.removeClass('menu-opened');
     });
   });

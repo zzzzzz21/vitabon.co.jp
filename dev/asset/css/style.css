@@ -311,10 +311,6 @@ a:focus,a:hover {
   transition: opacity .3s;
 }
 
-.main-top+.pagination .active span {
-  opacity: 1;
-}
-
 .main-top+.pagination .color-name {
   margin-left: 30px;
   width: 60px;
@@ -322,7 +318,12 @@ a:focus,a:hover {
 }
 
 .main-top+.pagination a {
+  display: block;
   color: #fff;
+}
+
+.main-top+.pagination a:hover {
+  opacity: 1;
 }
 
 .main-top+.pagination li {
@@ -343,12 +344,16 @@ a:focus,a:hover {
   bottom: 0;
 }
 
-.main-top+.pagination li:nth-of-type(2) span,.main-top+.pagination li:nth-of-type(5) span {
-  color: #999;
+.main-top+.pagination li:hover span {
+  opacity: 1;
 }
 
 .main-top+.pagination li+li {
   margin-top: 15px;
+}
+
+.fp-viewing-black .pagination li span,.fp-viewing-white .pagination li span {
+  color: #999;
 }
 
 .fp-viewing-black .pagination li:after,.fp-viewing-white .pagination li:after {
@@ -400,7 +405,7 @@ a:focus,a:hover {
   left: 85px;
   font-size: 82rem;
   text-shadow: 0 0 5px rgba(215,148,182,.13);
-  letter-spacing: .4em;
+  letter-spacing: .15em;
   color: #fff;
   line-height: 1.24390243902439;
 }
@@ -493,7 +498,7 @@ a:focus,a:hover {
 
 .section-item .header-section-item {
   position: absolute;
-  top: 135px;
+  top: 125px;
   left: 50px;
 }
 
@@ -519,18 +524,18 @@ a:focus,a:hover {
 
 .section-item .copy {
   position: absolute;
-  top: 215px;
+  top: 195px;
   left: 50px;
   font-size: 36rem;
   letter-spacing: .1em;
-  line-height: 1.666666666666667;
+  line-height: 1.5;
 }
 
 .section-item .item-photo {
   position: absolute;
   display: inline-block;
   margin: auto;
-  top: 0;
+  top: 85px;
   right: 0;
   bottom: 0;
   left: 0;
@@ -547,15 +552,13 @@ a:focus,a:hover {
   position: absolute;
   bottom: 80px;
   right: 40px;
-  color: #333;
+  color: #fff;
   font-size: 14rem;
   width: 210px;
 }
 
 .section-item .ingredients h3 {
-  border-bottom-width: 1px;
-  border-bottom-style: solid;
-  border-color: #333;
+  border-bottom: 1px solid #fff;
   padding-bottom: 5px;
   margin-bottom: 5px;
   padding-left: 5px;
@@ -585,22 +588,6 @@ a:focus,a:hover {
 
 .section-item.item-white .ingredients h3 {
   border-bottom-color: #999;
-}
-
-.section-item.item-black .ingredients {
-  color: #999;
-}
-
-.section-item.item-black .ingredients h3 {
-  border-bottom-color: #999;
-}
-
-.section-item.item-yellow .ingredients {
-  color: #7e4c42;
-}
-
-.section-item.item-yellow .ingredients h3 {
-  border-bottom-color: #7e4c42;
 }
 
 .section-sns {
@@ -962,7 +949,7 @@ a:focus,a:hover {
   .billboard-top>.copy {
     top: 57px;
     left: 8px;
-    font-size: 34rem;
+    font-size: 20rem;
     line-height: 1.238805970149254;
   }
   .billboard-top .font-zero,.billboard-top .product {
@@ -986,6 +973,7 @@ a:focus,a:hover {
     left: 1.6;
   }
   .section-item .item-photo {
+    top: 45px;
     width: 245px;
     height: 24px;
   }
@@ -1049,6 +1037,7 @@ a:focus,a:hover {
     padding: 50px 0 40px;
   }
   .section-caution .contact h4 {
+    width: auto;
     font-size: 15rem;
     height: 30px;
     line-height: 30px;
@@ -1252,6 +1241,7 @@ a:focus,a:hover {
     font-size: 19rem;
   }
   .section-item .item-photo {
+    top: 45px;
     width: 265px;
     height: 20px;
   }
@@ -1337,5 +1327,52 @@ a:focus,a:hover {
   .section-privacypolicy {
     width: auto;
     margin: 0 20px 100px;
+  }
+}
+
+@media (min-width:768px) and (max-height: 800px) {
+  .menu-sub {
+    padding-top: 60px;
+  }
+  .menu-sub .items-menu-sub {
+    margin-top: 30px;
+  }
+  .menu-sub .item-menu-sub {
+    margin-bottom: 4vh;
+  }
+}
+
+@media (min-width:768px) and (max-height: 880px) {
+  .main-top+.pagination {
+    top: 320px;
+    transform: none;
+  }
+}
+
+@media (min-width:768px) and (max-height: 980px) {
+  .main-top+.pagination li+li {
+    margin-top: 10px;
+  }
+  .section-item .header-section-item h2 .color-name {
+    font-size: 55rem;
+  }
+  .section-item .copy {
+    top: 185px;
+    font-size: 30rem;
+  }
+}
+
+@media (min-width:768px) and (max-height: 850px) {
+  .billboard-top>.copy {
+    font-size: 45rem;
+    top: 105px;
+  }
+  .billboard-top .product .copy {
+    font-size: 18rem;
+    margin-left: 15px;
+    margin-bottom: 10px;
+  }
+  .billboard-top .product li+li {
+    margin-top: 10px;
   }
 }

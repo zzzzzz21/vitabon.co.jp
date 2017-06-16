@@ -20,6 +20,9 @@
     l-sm -235px
     z-index 100
     transform translateY(-50%)
+    @media (min-width: 768px) and (max-height:880px)
+      top 320px
+      transform none
     img
       height 30px
       h-sm 18px
@@ -32,8 +35,6 @@
       fz-sm 10
       opacity 0
       transition opacity .3s
-    .active span
-      opacity 1
     .color-name
       margin-left 30px
       ml-sm 22px
@@ -41,7 +42,10 @@
       w-sm 45px
       text-transform: uppercase;
     a
+      display block
       color #fff
+      &:hover
+        opacity 1
     li
       position relative
       &::after
@@ -58,19 +62,21 @@
         margin auto
         top 0
         bottom 0
-      &:nth-of-type(2)
-      &:nth-of-type(5)
-        span
-          color #999
+      &:hover span
+        opacity 1
 
     li + li
       margin-top 15px
       mt-sm 12px
+      @media (min-width: 768px) and (max-height:980px)
+        margin-top 10px
 
 .fp-viewing-white
 .fp-viewing-black
   .pagination
     li
+      span
+        color #999
       &::after
         background-color #999
 
@@ -131,6 +137,9 @@
   > .copy
     position absolute
     top 60 + 85 px
+    @media (min-width: 768px) and (max-height:850px)
+      font-size 45px
+      top 105px
     t-sm 35 + 45 px
     t-xs 12 + 45 px
     left 85px
@@ -138,9 +147,9 @@
     l-xs 8px
     font-size 82px
     fz-sm 45px
-    fz-xs 34
+    fz-xs 20
     text-shadow 0 0 5px alpha(#d794b6, .13)
-    letter-spacing .4em
+    letter-spacing .15em
     color #fff
     line-height (102 / 82)
     lh-xs(83/67)
@@ -158,6 +167,10 @@
       ml-sm 15px
       margin-bottom 20px
       mb-sm 10px
+      @media (min-width: 768px) and (max-height:850px)
+        font-size 18px
+        margin-left 15px
+        margin-bottom 10px
     li
       font-size 13px
       fz-sm 11px
@@ -181,6 +194,8 @@
       + li
         margin-top 20px
         mt-sm 10px
+        @media (min-width: 768px) and (max-height:850px)
+          margin-top 10px
   .font-zero
     dn-xs()
     position absolute
@@ -204,7 +219,7 @@ for i in items
   color #fff
   .header-section-item
     position absolute
-    top 50 + 85 px
+    top 40 + 85 px
     t-sm 30 + 45px
     t-xs 15 + 45px
     left 50px
@@ -220,6 +235,8 @@ for i in items
         font-size 60px
         fz-sm 32
         fz-xs 30
+        @media (min-width: 768px) and (max-height:980px)
+          font-size 55px
       small
         display inline-block
         margin-left 15px
@@ -231,7 +248,7 @@ for i in items
         vertical-align middle
   .copy
     position absolute
-    top 130 + 85 px
+    top 110 + 85 px
     t-sm 70 + 45px
     t-xs 60 + 45px
     left 50px
@@ -241,14 +258,22 @@ for i in items
     fz-sm 19
     fz-xs 15px
     letter-spacing .1em
-    line-height (60 / 36)
+    line-height 1.5
     l-xs(48/30)
+    @media (min-width: 768px) and (max-height:980px)
+      top 100 + 85 px
+      font-size 30px
 
   .item-photo
     position absolute
     display inline-block
     margin auto
-    trbl0()
+    top 85px
+    t-sm 45px
+    t-xs 45px
+    right 0
+    bottom 0
+    left 0
     width 491px
     height 36px
     w-sm 265px
@@ -267,7 +292,7 @@ for i in items
     right 40px
     r-sm 10px
     r-xs 16px
-    color #333
+    color #fff
     font-size 14px
     fz-sm 10
     fz-xs 8
@@ -275,9 +300,7 @@ for i in items
     w-sm 120px
     w-xs 120px
     h3
-      border-bottom-width 1px
-      border-bottom-style solid
-      border-color #333
+      border-bottom 1px solid  #fff
       padding-bottom 5px
       margin-bottom 5px
       padding-left 5px
@@ -305,17 +328,6 @@ for i in items
       color #999
       h3
         border-bottom-color #999
-  &.item-black
-    .ingredients
-      color #999
-      h3
-        border-bottom-color #999
-  &.item-yellow
-    .ingredients
-      color #7e4c42
-      h3
-        border-bottom-color #7e4c42
-
 
 .section-sns
   width 1280px
@@ -425,6 +437,7 @@ for i in items
     h4
       width 560px
       w-sm 320px
+      w-xs auto
       margin-right auto
       margin-left auto
       font-size 30px
