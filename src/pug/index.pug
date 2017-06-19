@@ -125,15 +125,11 @@ block main
           },
           {
             index: "電話番号",
-            content: "03-3453-7889"
-          },
-          {
-            index: "FAX番号",
-            content: "03-5539-4539"
+            content: "03-4577-8644（カスタマーセンター）"
           },
           {
             index: "​メール",
-            content: "<a  href='mailto:info@vitabon.co.jp'>info@vitabon.co.jp</a>"
+            content: "<a  href='mailto:info@vitabon.co.jp'>info@vitabon.co.jp</a>（カスタマーセンター）"
           }
         ]
       -
@@ -152,7 +148,7 @@ block main
 
   ul#pagination.pagination
     for i in ITEMS
-      li(data-menuanchor=i.code)
+      li(data-menuanchor=i.code class="link-"+i.code)
         a(href="#"+i.code)
           img(src=root+PATH.image+"/item_"+i.code+".png" alt=i.name)
           span.color-name= i.code

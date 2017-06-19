@@ -352,6 +352,10 @@ a:focus,a:hover {
   margin-top: 15px;
 }
 
+.fp-viewing-black .link-black span,.fp-viewing-blue .link-blue span,.fp-viewing-gold .link-gold span,.fp-viewing-green .link-green span,.fp-viewing-purple .link-purple span,.fp-viewing-white .link-white span,.fp-viewing-yellow .link-yellow span {
+  opacity: 1;
+}
+
 .fp-viewing-black .pagination li span,.fp-viewing-white .pagination li span {
   color: #999;
 }
