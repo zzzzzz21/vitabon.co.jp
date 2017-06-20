@@ -5,10 +5,13 @@ title= TITLE[pId]
 link(rel='icon' type='image/vnd.microsoft.icon' href=root+PATH.image+'/favicon.ico')
 meta(property='og:locale' content='ja_JP')
 meta(property='og:title' content=TITLE[pId])
-meta(property='og:type' content='website')
+if (pId == 'top')
+  meta(property='og:type' content='website')
+else
+  meta(property='og:type' content='article')
 if OGP
   meta(property='og:image' content=OGP)
-meta(property='og:url' content=LINK[pId])
+meta(property='og:url' content=URL+LINK[pId])
 meta(property='og:site_name' content=SITE_NAME)
 meta(property='og:description' content=DESCRIPTION[pId])
 meta(name='keywords' content=KEYWORD[pId])
