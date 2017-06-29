@@ -2,7 +2,7 @@
   var fullpageOpts, init;
 
   fullpageOpts = {
-    anchors: ["top", "green", "white", "blue", "gold", "black", "purple", 'yellow', 'sns', 'caution', 'about'],
+    anchors: ["top", "green", "white", "blue", "gold", "black", "purple", 'yellow', 'caution', 'about'],
     scrollOverflow: true,
     verticalCentered: false,
     menu: "#pagination",
