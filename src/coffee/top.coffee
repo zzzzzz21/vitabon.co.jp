@@ -1,5 +1,5 @@
 fullpageOpts =
-  anchors: ["top", "green", "white", "blue", "gold", "black", "purple", 'yellow', 'sns', 'caution', 'about']
+  anchors: ["top", "green", "white", "blue", "gold", "black", "purple", 'yellow', 'caution', 'about']
   # navigation: true
   # navigationPosition:'left'
   # fitToSection: true
